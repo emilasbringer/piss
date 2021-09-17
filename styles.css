@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.p1text {
+    position: absolute;
+    top: 0;
+    left: 16.5%;
+    font-size: 4rem;
+    z-index: 5;
+}
+
+.p2text {
+    top: 0;
+    right: 16.5%;
+    position: absolute;
+    font-size: 4rem;
+    z-index: 5;
+}
+
+.gamewindow {
+    width: 100vw;
+    height: 100vh;
+    background: rgb(77, 77, 77);
+    display: flex;
+    align-items: center;
+}
+
+.playerwindow {
+    height: 90vh;
+    width: 40%;
+    background: #8181815b;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+
+.leftplayerwindow {
+    left: 5vw;
+}
+
+.divider {
+    width: 0.1rem;
+    height: 100vh;
+    background: black;
+    position: absolute;
+    left: 50%;
+}
+
+.rightplayerwindow {
+    right: 5vw;
+}
+
+.boxshower {
+    width: 60%;
+    height: 60%;
+    background: rgb(100, 100, 100);
+    margin-top: 3rem;
+}
+
+.hotbar {
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    width: 100%;
+    height: 6.3rem;
+    background: rgb(139, 139, 139);
+    bottom: 0;
+}
+
+.item {
+    width: 6.3rem;
+    height: 5.8rem;
+    border: rgb(49, 49, 49) 4px solid;
+}
+
+.flower {
+    background-image: url("/images/blomma.png");
+}
+.science {
+    background-image: url("/images/science.png");
+}
+.dollar {
+    background-image: url("/images/dollar.png");
+}
+.jew {
+    background-image: url("/images/jude.png");
+}
+.arrow {
+    background-image: url("/images/arrow.png");
+}
