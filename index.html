@@ -6,12 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reaction Satisfaction</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/science.png">
 </head>
-<body>
+<body onkeydown="uniKeyCode(event)">
     <div class="gamewindow">
+        <div class="textwindow">
+            <div class="maintext" id="maintext">a</div>
+            <input type="text" id="playerinput">
+        </div>
         <div class="p1text">Player 1</div>
         <div class="p2text">Player 2</div>
-        <div class="playerwindow leftplayerwindow">
+        <div class="playerwindow leftplayerwindow" id="lpw">
             <div class="boxshower" id="leftboxshower"></div>
             <div class="hotbar" id="lefthotbar">
                 <div class="item flower" id="one"></div>
@@ -22,8 +27,8 @@
             </div>
         </div>
         <div class="divider"></div>
-        <div class="playerwindow rightplayerwindow">
-            <div class="boxshower" id="rightshower"></div>
+        <div class="playerwindow rightplayerwindow" id="rpw">
+            <div class="boxshower" id="rightboxshower"></div>
             <div class="hotbar" id="righthotbar">
                 <div class="item flower"  id="six"></div>
                 <div class="item science"  id="seven"></div>
