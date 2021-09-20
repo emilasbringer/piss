@@ -32,11 +32,11 @@ function uniKeyCode(event) {
     }
         if (timepenaltyright < 1) {  
             for(var i = 0; i < pressedkeyp2.length; i++){hotbaritems[i+5].style.border = "4px solid #313131";}          
-            if(key == 78)   {pressedkeyp2[0] = true;    pressedkeyp2[1] = false;    pressedkeyp2[2] = false;    pressedkeyp2[3] = false;    pressedkeyp2[4] = false;    if(pressedkeyp2[0] && gameorderarr[rightcounter] == 5) {hotbaritems[5].style.border = "4px solid #07fc13";} else {hotbaritems[5].style.border = "4px solid red"; timepenaltyleft = 3;}}
-            if(key == 77)   {pressedkeyp2[0] = false;   pressedkeyp2[1] = true;     pressedkeyp2[2] = false;    pressedkeyp2[3] = false;    pressedkeyp2[4] = false;    if(pressedkeyp2[1] && gameorderarr[rightcounter] == 6) {hotbaritems[6].style.border = "4px solid #07fc13";} else {hotbaritems[6].style.border = "4px solid red"; timepenaltyleft = 3;}}
-            if(key == 188)  {pressedkeyp2[0] = false;   pressedkeyp2[1] = false;    pressedkeyp2[2] = true;     pressedkeyp2[3] = false;    pressedkeyp2[4] = false;    if(pressedkeyp2[2] && gameorderarr[rightcounter] == 7) {hotbaritems[7].style.border = "4px solid #07fc13";} else {hotbaritems[7].style.border = "4px solid red"; timepenaltyleft = 3;}}
-            if(key == 190)  {pressedkeyp2[0] = false;   pressedkeyp2[1] = false;    pressedkeyp2[2] = false;    pressedkeyp2[3] = true;     pressedkeyp2[4] = false;    if(pressedkeyp2[3] && gameorderarr[rightcounter] == 8) {hotbaritems[8].style.border = "4px solid #07fc13";} else {hotbaritems[8].style.border = "4px solid red"; timepenaltyleft = 3;}}
-            if(key == 189)  {pressedkeyp2[0] = false;   pressedkeyp2[1] = false;    pressedkeyp2[2] = false;    pressedkeyp2[3] = false;    pressedkeyp2[4] = true;     if(pressedkeyp2[4] && gameorderarr[rightcounter] == 9) {hotbaritems[9].style.border = "4px solid #07fc13";} else {hotbaritems[9].style.border = "4px solid red"; timepenaltyleft = 3;}}
+            if(key == 78)   {pressedkeyp2[0] = true;    pressedkeyp2[1] = false;    pressedkeyp2[2] = false;    pressedkeyp2[3] = false;    pressedkeyp2[4] = false;    if(pressedkeyp2[0] && gameorderarr[rightcounter] == 0) {hotbaritems[5].style.border = "4px solid #07fc13";} else {hotbaritems[5].style.border = "4px solid red"; timepenaltyright = 3;   console.log("timepenalty right!");}}
+            if(key == 77)   {pressedkeyp2[0] = false;   pressedkeyp2[1] = true;     pressedkeyp2[2] = false;    pressedkeyp2[3] = false;    pressedkeyp2[4] = false;    if(pressedkeyp2[1] && gameorderarr[rightcounter] == 1) {hotbaritems[6].style.border = "4px solid #07fc13";} else {hotbaritems[6].style.border = "4px solid red"; timepenaltyright = 3;   console.log("timepenalty right!");}}
+            if(key == 188)  {pressedkeyp2[0] = false;   pressedkeyp2[1] = false;    pressedkeyp2[2] = true;     pressedkeyp2[3] = false;    pressedkeyp2[4] = false;    if(pressedkeyp2[2] && gameorderarr[rightcounter] == 2) {hotbaritems[7].style.border = "4px solid #07fc13";} else {hotbaritems[7].style.border = "4px solid red"; timepenaltyright = 3;   console.log("timepenalty right!");}}
+            if(key == 190)  {pressedkeyp2[0] = false;   pressedkeyp2[1] = false;    pressedkeyp2[2] = false;    pressedkeyp2[3] = true;     pressedkeyp2[4] = false;    if(pressedkeyp2[3] && gameorderarr[rightcounter] == 3) {hotbaritems[8].style.border = "4px solid #07fc13";} else {hotbaritems[8].style.border = "4px solid red"; timepenaltyright = 3;   console.log("timepenalty right!");}}
+            if(key == 189)  {pressedkeyp2[0] = false;   pressedkeyp2[1] = false;    pressedkeyp2[2] = false;    pressedkeyp2[3] = false;    pressedkeyp2[4] = true;     if(pressedkeyp2[4] && gameorderarr[rightcounter] == 4) {hotbaritems[9].style.border = "4px solid #07fc13";} else {hotbaritems[9].style.border = "4px solid red"; timepenaltyright = 3;   console.log("timepenalty right!");}}
         }
     }
 }
@@ -60,7 +60,7 @@ function startGame() {
     maintext.style.display = "none";
     playerinput.style.display = "none";
     leftgamewindow.style.backgroundImage = picture[gameorderarr[leftcounter]];
-    rightgamewindow.style.backgroundImage = picture[gameorderarr[leftcounter]];
+    rightgamewindow.style.backgroundImage = picture[gameorderarr[rightcounter]];
     startImageChanger();
 }
 
