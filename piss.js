@@ -94,6 +94,8 @@ function newRoundLeft() {
         maintext.style.display = "block";
         maintext.innerHTML = "Player 1 wins";
         leftplayerwindow.style.background = "#07fc13";
+        leftgamewindow.style.background = "#07fc13";
+        rightgamewindow.style.background = "red";
         rightplayerwindow.style.background = "red";
     }
     console.log("winner ="+winner);
@@ -105,6 +107,8 @@ function newRoundRight() {
         maintext.style.display = "block";
         maintext.innerHTML = "Player 2 wins";
         rightplayerwindow.style.background = "#07fc13";
+        rightgamewindow.style.background = "#07fc13";
+        leftgamewindow.style.background = "red";
         leftplayerwindow.style.background = "red";    
     }
     rightgamewindow.style.backgroundImage = picture[gameorderarr[rightcounter]];
