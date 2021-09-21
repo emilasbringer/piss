@@ -9,18 +9,28 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+.section {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .textwindow {
-    z-index: 20;
+    z-index: 1000;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
-
+    width: 100vw;
+    position: absolute;
+    height: 10rem;
+    margin-top: 12rem;
 }
 
 .maintext {
-    width: 100%;
+    width: 100vw;
     z-index: 15;
     font-size: 4rem;
     text-align: center;
@@ -35,51 +45,103 @@ body {
     border: 4px #00ffff17 solid;
 }
 
-
-
 .p1text {
-    position: absolute;
-    top: 0;
-    left: 16.5%;
     font-size: 4rem;
     z-index: 5;
+    width: 100%;
+    text-align: center;
+    border-bottom: 5px solid black;
 }
 
 .p2text {
-    top: 0;
-    right: 16.5%;
-    position: absolute;
+    height: fit-content;
     font-size: 4rem;
     z-index: 5;
+    width: 100%;
+    text-align: center;
+    border-bottom: 5px solid black;
 }
+
+.container {
+    position: absolute;
+    width: 100%;
+    height: 144px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+}
+
+.rrc {
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 10rem;
+    height: 58px;
+    font-size: 3rem;
+    border-bottom:  black 5px solid;
+    border-left:    black 5px solid;
+    border-right:   black 5px solid;
+}
+
+#rrl {
+    width: 50%;
+    height: 63px;
+    text-align: center;
+    border-right: 3px solid black;
+}
+
+#rrr {
+    width: 50%;
+    height: 63px;
+    text-align: center;
+    border-left: 3px solid black;
+}
+
 
 .gamewindow {
     width: 100vw;
     height: 100vh;
     background: rgb(77, 77, 77);
     display: flex;
-    align-items: center;
 }
 
 .playerwindow {
     height: 90vh;
-    width: 40%;
+    width: 100%;
     background: #8181815b;
-    position: absolute;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .leftplayerwindow {
     left: 5vw;
 }
 
-.divider {
-    width: 0.1rem;
+.dividercontainer {
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100vw;
     height: 100vh;
+}
+
+.divider {
+    width: 5px;
+    height: 579px;
+    background: black;
+}
+
+.divider2 {
+    width: 5px;
+    height: 579px;
     background: black;
     position: absolute;
-    left: 50%;
+    top: 0;
 }
 
 .rightplayerwindow {
@@ -90,40 +152,58 @@ body {
     width: 60%;
     height: 60%;
     background: rgb(100, 100, 100);
-    margin-top: 3rem;
     background-size: 80%;
     background-repeat: no-repeat;
     background-position: center;
+    margin-top: 4rem;
+    border: 1px black solid;
 }
 
 .hotbar {
     display: flex;
-    justify-content: space-evenly;
-    position: absolute;
+    justify-content: center;
     width: 100%;
     height: 6.3rem;
     background: rgb(139, 139, 139);
     bottom: 0;
+    left: 0 ;
+    border-top: 2px solid black;
 }
 
 .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 6.3rem;
     height: 5.8rem;
     border: #313131 4px solid;
+    background-size: 90px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.itemtext {
+    -webkit-text-stroke: 2px black;
+    font-size: 4rem;
+    color: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.141);
+    width: 100%;
+    height: 80%;
+    text-align: center;
 }
 
 .flower {
-    background-image: url("/images/blomma.png");
+    background-image: url("/images/schnoze.png");
 }
 .science {
-    background-image: url("/images/science.png");
+    background-image: url("/images/cow.png");
 }
 .dollar {
-    background-image: url("/images/dollar.png");
+    background-image: url("/images/xbox.png");
 }
 .jew {
-    background-image: url("/images/jude.png");
+    background-image: url("/images/finger.png");
 }
 .arrow {
-    background-image: url("/images/arrow.png");
+    background-image: url("/images/burger.png");
 }

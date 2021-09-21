@@ -1,12 +1,16 @@
 const maintext = document.querySelector("#maintext");
 const playerinput = document.querySelector("#playerinput");
+const leftroundcounter = document.querySelector("#rrl");
+const rightroundcounter = document.querySelector("#rrr");
+const hotbar1 = document.querySelector("#lefthotbar");
+const hotbar2 = document.querySelector("#righthotbar");
 var leftgamewindow = document.querySelector("#leftboxshower");
 var rightgamewindow = document.querySelector("#rightboxshower");
 var leftplayerwindow = document.querySelector("#lpw");
 var rightplayerwindow = document.querySelector("#rpw");
 var pressedkeyp1 = [false,false,false,false,false];
 var pressedkeyp2 = [false,false,false,false,false];
-var picture = ["url('images/blomma.png')","url('images/science.png')","url('images/dollar.png')","url('images/jude.png')","url('images/arrow.png')"];
+var picture = ["url('images/schnoze.png')","url('images/cow.png')","url('images/xbox.png')","url('images/finger.png')","url('images/burger.png')"];
 var hotbaritems = [document.querySelector("#one"),document.querySelector("#two"),document.querySelector("#three"),document.querySelector("#four"),document.querySelector("#five"),document.querySelector("#six"),document.querySelector("#seven"),document.querySelector("#eight"),document.querySelector("#nine"),document.querySelector("#ten")];
 var start = false;
 var gamelength = 20;
@@ -16,6 +20,7 @@ var rightcounter = 0;
 var gameorderarr=[];
 var timepenaltyleft = 0;
 var timepenaltyright = 0;
+var hiddenHotbar = false;
 playerinput.focus();
 
 function uniKeyCode(event) {
@@ -45,11 +50,14 @@ maintext.innerHTML = "How many rounds would you like to play?";
 
 function getInput() {
     var txtinput = document.getElementById("playerinput").value;
+    if(txtinput == "hidden") {hotbar1.style.display = "none"; hotbar2.style.display = "none";}
+    else {
     if (!start) {
         gamelength = txtinput;
         start = true;
         startGame();
     }
+}
 }
 
 function startGame() {
@@ -59,6 +67,8 @@ function startGame() {
     } 
     maintext.style.display = "none";
     playerinput.style.display = "none";
+    rightroundcounter.innerHTML = gameorderarr.length;
+    leftroundcounter.innerHTML = gameorderarr.length;
     leftgamewindow.style.backgroundImage = picture[gameorderarr[leftcounter]];
     rightgamewindow.style.backgroundImage = picture[gameorderarr[rightcounter]];
     startImageChanger();
@@ -81,6 +91,16 @@ setInterval(() => {
         newRoundRight();
     }
 
+    if (leftcounter < rightcounter) {
+        rrl.style.color = "red";
+        rrr.style.color = "#07fc13";
+        
+    }
+    else {
+        rrl.style.color = "#07fc13";
+        rrr.style.color = "red";
+    }
+
 }, 30);
 setInterval(() => {
     if(timepenaltyleft>0) {timepenaltyleft--};
@@ -94,12 +114,14 @@ function newRoundLeft() {
         maintext.style.display = "block";
         maintext.innerHTML = "Player 1 wins";
         leftplayerwindow.style.background = "#07fc13";
+        rightplayerwindow.style.background = "red";
         leftgamewindow.style.background = "#07fc13";
         rightgamewindow.style.background = "red";
-        rightplayerwindow.style.background = "red";
+        
     }
     console.log("winner ="+winner);
     leftgamewindow.style.backgroundImage = picture[gameorderarr[leftcounter]];
+    leftroundcounter.innerHTML = gameorderarr.length - leftcounter;
 }
 
 function newRoundRight() {
@@ -112,6 +134,7 @@ function newRoundRight() {
         leftplayerwindow.style.background = "red";    
     }
     rightgamewindow.style.backgroundImage = picture[gameorderarr[rightcounter]];
+    rightroundcounter.innerHTML = gameorderarr.length - rightcounter;
 }
 
 
