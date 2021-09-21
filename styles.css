@@ -193,17 +193,17 @@ body {
 }
 
 .flower {
-    background-image: url("/images/schnoze.png");
+    background-image: url("./images/schnoze.png");
 }
 .science {
-    background-image: url("/images/cow.png");
+    background-image: url("./images/cow.png");
 }
 .dollar {
-    background-image: url("/images/xbox.png");
+    background-image: url("./images/xbox.png");
 }
 .jew {
-    background-image: url("/images/finger.png");
+    background-image: url("./images/finger.png");
 }
 .arrow {
-    background-image: url("/images/burger.png");
+    background-image: url("./images/burger.png");
 }
