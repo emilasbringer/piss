@@ -109,7 +109,7 @@ setInterval(() => {
 }
 
 function newRoundLeft() {
-    console.log("newroundleft");
+    leftgamewindow.style.backgroundImage = picture[gameorderarr[leftcounter]];
     if(winner == 1) {
         maintext.style.display = "block";
         maintext.innerHTML = "Player 1 wins";
@@ -117,14 +117,14 @@ function newRoundLeft() {
         rightplayerwindow.style.background = "red";
         leftgamewindow.style.background = "#07fc13";
         rightgamewindow.style.background = "red";
-        
+        leftgamewindow.style.backgroundImage = "none";
+        rightgamewindow.style.backgroundImage = "none";
     }
-    console.log("winner ="+winner);
-    leftgamewindow.style.backgroundImage = picture[gameorderarr[leftcounter]];
     leftroundcounter.innerHTML = gameorderarr.length - leftcounter;
 }
 
 function newRoundRight() {
+    rightgamewindow.style.backgroundImage = picture[gameorderarr[rightcounter]];
     if(winner == 2) {
         maintext.style.display = "block";
         maintext.innerHTML = "Player 2 wins";
@@ -132,8 +132,9 @@ function newRoundRight() {
         rightgamewindow.style.background = "#07fc13";
         leftgamewindow.style.background = "red";
         leftplayerwindow.style.background = "red";    
+        rightgamewindow.style.backgroundImage = "none";
+        leftgamewindow.style.backgroundImage = "none";
     }
-    rightgamewindow.style.backgroundImage = picture[gameorderarr[rightcounter]];
     rightroundcounter.innerHTML = gameorderarr.length - rightcounter;
 }
 
