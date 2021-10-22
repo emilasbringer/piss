@@ -18,30 +18,31 @@ var winner = 0;
 var leftcounter = 0;
 var rightcounter = 0;
 var gameorderarr=[];
-var timepenaltyleft = 0;
-var timepenaltyright = 0;
+var timepenaltyleft = 2;
+var timepenaltyright = 2;
 var hiddenHotbar = false;
 playerinput.focus();
-
+leftgamewindow.style.border = "4px solid red";
+rightgamewindow.style.border = "4px solid red";
 function uniKeyCode(event) {
     var key = event.keyCode;
     if(key == 13) {getInput();}
     if(start) {
         if (timepenaltyleft < 1) {
             for(var i = 0; i < pressedkeyp1.length; i++){hotbaritems[i].style.border = "4px solid #313131";}
-            if(key == 81)   {pressedkeyp1[0] = true;    pressedkeyp1[1] = false;    pressedkeyp1[2] = false;    pressedkeyp1[3] = false;    pressedkeyp1[4] = false;    if(pressedkeyp1[0] && gameorderarr[leftcounter] == 0) {hotbaritems[0].style.border = "4px solid #07fc13";} else {hotbaritems[0].style.border = "4px solid red"; timepenaltyleft = 3;}}
-            if(key == 87)   {pressedkeyp1[0] = false;   pressedkeyp1[1] = true;     pressedkeyp1[2] = false;    pressedkeyp1[3] = false;    pressedkeyp1[4] = false;    if(pressedkeyp1[1] && gameorderarr[leftcounter] == 1) {hotbaritems[1].style.border = "4px solid #07fc13";} else {hotbaritems[1].style.border = "4px solid red"; timepenaltyleft = 3;}}
-            if(key == 69)   {pressedkeyp1[0] = false;   pressedkeyp1[1] = false;    pressedkeyp1[2] = true;     pressedkeyp1[3] = false;    pressedkeyp1[4] = false;    if(pressedkeyp1[2] && gameorderarr[leftcounter] == 2) {hotbaritems[2].style.border = "4px solid #07fc13";} else {hotbaritems[2].style.border = "4px solid red"; timepenaltyleft = 3;}}
-            if(key == 82)   {pressedkeyp1[0] = false;   pressedkeyp1[1] = false;    pressedkeyp1[2] = false;    pressedkeyp1[3] = true;     pressedkeyp1[4] = false;    if(pressedkeyp1[3] && gameorderarr[leftcounter] == 3) {hotbaritems[3].style.border = "4px solid #07fc13";} else {hotbaritems[3].style.border = "4px solid red"; timepenaltyleft = 3;}}
-            if(key == 84)   {pressedkeyp1[0] = false;   pressedkeyp1[1] = false;    pressedkeyp1[2] = false;    pressedkeyp1[3] = false;    pressedkeyp1[4] = true;     if(pressedkeyp1[4] && gameorderarr[leftcounter] == 4) {hotbaritems[4].style.border = "4px solid #07fc13";} else {hotbaritems[4].style.border = "4px solid red"; timepenaltyleft = 3;}}    
+            if(key == 81)   {pressedkeyp1[0] = true;    pressedkeyp1[1] = false;    pressedkeyp1[2] = false;    pressedkeyp1[3] = false;    pressedkeyp1[4] = false;    if(pressedkeyp1[0] && gameorderarr[leftcounter] == 0) {hotbaritems[0].style.border = "4px solid #07fc13"; leftgamewindow.style.border = "4px solid #07fc13"} else {hotbaritems[0].style.border = "4px solid red"; timepenaltyleft = 3; leftgamewindow.style.border = "4px solid red"} }
+            if(key == 87)   {pressedkeyp1[0] = false;   pressedkeyp1[1] = true;     pressedkeyp1[2] = false;    pressedkeyp1[3] = false;    pressedkeyp1[4] = false;    if(pressedkeyp1[1] && gameorderarr[leftcounter] == 1) {hotbaritems[1].style.border = "4px solid #07fc13"; leftgamewindow.style.border = "4px solid #07fc13"} else {hotbaritems[1].style.border = "4px solid red"; timepenaltyleft = 3; leftgamewindow.style.border = "4px solid red"} }
+            if(key == 69)   {pressedkeyp1[0] = false;   pressedkeyp1[1] = false;    pressedkeyp1[2] = true;     pressedkeyp1[3] = false;    pressedkeyp1[4] = false;    if(pressedkeyp1[2] && gameorderarr[leftcounter] == 2) {hotbaritems[2].style.border = "4px solid #07fc13"; leftgamewindow.style.border = "4px solid #07fc13"} else {hotbaritems[2].style.border = "4px solid red"; timepenaltyleft = 3; leftgamewindow.style.border = "4px solid red"} }
+            if(key == 82)   {pressedkeyp1[0] = false;   pressedkeyp1[1] = false;    pressedkeyp1[2] = false;    pressedkeyp1[3] = true;     pressedkeyp1[4] = false;    if(pressedkeyp1[3] && gameorderarr[leftcounter] == 3) {hotbaritems[3].style.border = "4px solid #07fc13"; leftgamewindow.style.border = "4px solid #07fc13"} else {hotbaritems[3].style.border = "4px solid red"; timepenaltyleft = 3; leftgamewindow.style.border = "4px solid red"} }
+            if(key == 84)   {pressedkeyp1[0] = false;   pressedkeyp1[1] = false;    pressedkeyp1[2] = false;    pressedkeyp1[3] = false;    pressedkeyp1[4] = true;     if(pressedkeyp1[4] && gameorderarr[leftcounter] == 4) {hotbaritems[4].style.border = "4px solid #07fc13"; leftgamewindow.style.border = "4px solid #07fc13"} else {hotbaritems[4].style.border = "4px solid red"; timepenaltyleft = 3; leftgamewindow.style.border = "4px solid red"} }    
     }
         if (timepenaltyright < 1) {  
             for(var i = 0; i < pressedkeyp2.length; i++){hotbaritems[i+5].style.border = "4px solid #313131";}          
-            if(key == 78)   {pressedkeyp2[0] = true;    pressedkeyp2[1] = false;    pressedkeyp2[2] = false;    pressedkeyp2[3] = false;    pressedkeyp2[4] = false;    if(pressedkeyp2[0] && gameorderarr[rightcounter] == 0) {hotbaritems[5].style.border = "4px solid #07fc13";} else {hotbaritems[5].style.border = "4px solid red"; timepenaltyright = 3;   console.log("timepenalty right!");}}
-            if(key == 77)   {pressedkeyp2[0] = false;   pressedkeyp2[1] = true;     pressedkeyp2[2] = false;    pressedkeyp2[3] = false;    pressedkeyp2[4] = false;    if(pressedkeyp2[1] && gameorderarr[rightcounter] == 1) {hotbaritems[6].style.border = "4px solid #07fc13";} else {hotbaritems[6].style.border = "4px solid red"; timepenaltyright = 3;   console.log("timepenalty right!");}}
-            if(key == 188)  {pressedkeyp2[0] = false;   pressedkeyp2[1] = false;    pressedkeyp2[2] = true;     pressedkeyp2[3] = false;    pressedkeyp2[4] = false;    if(pressedkeyp2[2] && gameorderarr[rightcounter] == 2) {hotbaritems[7].style.border = "4px solid #07fc13";} else {hotbaritems[7].style.border = "4px solid red"; timepenaltyright = 3;   console.log("timepenalty right!");}}
-            if(key == 190)  {pressedkeyp2[0] = false;   pressedkeyp2[1] = false;    pressedkeyp2[2] = false;    pressedkeyp2[3] = true;     pressedkeyp2[4] = false;    if(pressedkeyp2[3] && gameorderarr[rightcounter] == 3) {hotbaritems[8].style.border = "4px solid #07fc13";} else {hotbaritems[8].style.border = "4px solid red"; timepenaltyright = 3;   console.log("timepenalty right!");}}
-            if(key == 189)  {pressedkeyp2[0] = false;   pressedkeyp2[1] = false;    pressedkeyp2[2] = false;    pressedkeyp2[3] = false;    pressedkeyp2[4] = true;     if(pressedkeyp2[4] && gameorderarr[rightcounter] == 4) {hotbaritems[9].style.border = "4px solid #07fc13";} else {hotbaritems[9].style.border = "4px solid red"; timepenaltyright = 3;   console.log("timepenalty right!");}}
+            if(key == 78)   {pressedkeyp2[0] = true;    pressedkeyp2[1] = false;    pressedkeyp2[2] = false;    pressedkeyp2[3] = false;    pressedkeyp2[4] = false;    if(pressedkeyp2[0] && gameorderarr[rightcounter] == 0) {hotbaritems[5].style.border = "4px solid #07fc13"; rightgamewindow.style.border = "4px solid #07fc13"} else {hotbaritems[5].style.border = "4px solid red"; timepenaltyright = 3; rightgamewindow.style.border = "4px solid red" }}
+            if(key == 77)   {pressedkeyp2[0] = false;   pressedkeyp2[1] = true;     pressedkeyp2[2] = false;    pressedkeyp2[3] = false;    pressedkeyp2[4] = false;    if(pressedkeyp2[1] && gameorderarr[rightcounter] == 1) {hotbaritems[6].style.border = "4px solid #07fc13"; rightgamewindow.style.border = "4px solid #07fc13"} else {hotbaritems[6].style.border = "4px solid red"; timepenaltyright = 3; rightgamewindow.style.border = "4px solid red" }}
+            if(key == 188)  {pressedkeyp2[0] = false;   pressedkeyp2[1] = false;    pressedkeyp2[2] = true;     pressedkeyp2[3] = false;    pressedkeyp2[4] = false;    if(pressedkeyp2[2] && gameorderarr[rightcounter] == 2) {hotbaritems[7].style.border = "4px solid #07fc13"; rightgamewindow.style.border = "4px solid #07fc13"} else {hotbaritems[7].style.border = "4px solid red"; timepenaltyright = 3; rightgamewindow.style.border = "4px solid red" }}
+            if(key == 190)  {pressedkeyp2[0] = false;   pressedkeyp2[1] = false;    pressedkeyp2[2] = false;    pressedkeyp2[3] = true;     pressedkeyp2[4] = false;    if(pressedkeyp2[3] && gameorderarr[rightcounter] == 3) {hotbaritems[8].style.border = "4px solid #07fc13"; rightgamewindow.style.border = "4px solid #07fc13"} else {hotbaritems[8].style.border = "4px solid red"; timepenaltyright = 3; rightgamewindow.style.border = "4px solid red" }}
+            if(key == 189)  {pressedkeyp2[0] = false;   pressedkeyp2[1] = false;    pressedkeyp2[2] = false;    pressedkeyp2[3] = false;    pressedkeyp2[4] = true;     if(pressedkeyp2[4] && gameorderarr[rightcounter] == 4) {hotbaritems[9].style.border = "4px solid #07fc13"; rightgamewindow.style.border = "4px solid #07fc13"} else {hotbaritems[9].style.border = "4px solid red"; timepenaltyright = 3; rightgamewindow.style.border = "4px solid red" }}
         }
     }
 }
@@ -103,8 +104,10 @@ setInterval(() => {
 
 }, 30);
 setInterval(() => {
-    if(timepenaltyleft>0) {timepenaltyleft--};
-    if(timepenaltyright>0){timepenaltyright--};
+    if(timepenaltyleft>0) {timepenaltyleft--; leftgamewindow.style.border = "4px solid red"};
+    if(timepenaltyright>0){timepenaltyright--; rightgamewindow.style.border = "4px solid red"};
+    if(timepenaltyleft<1)   {leftgamewindow.style.border = "4px solid #07fc13"}
+    if(timepenaltyright<1)  {rightgamewindow.style.border = "4px solid #07fc13"}
 }, 1000);
 }
 

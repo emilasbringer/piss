@@ -83,6 +83,7 @@ body {
     border-bottom:  black 5px solid;
     border-left:    black 5px solid;
     border-right:   black 5px solid;
+    border-radius: 3px;
 }
 
 #rrl {
@@ -90,6 +91,7 @@ body {
     height: 63px;
     text-align: center;
     border-right: 3px solid black;
+    border-radius: 3px;
 }
 
 #rrr {
@@ -156,7 +158,8 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     margin-top: 4rem;
-    border: 1px black solid;
+    border: 4px black solid;
+    border-radius: 3px;
 }
 
 .hotbar {
@@ -180,6 +183,7 @@ body {
     background-size: 90px;
     background-repeat: no-repeat;
     background-position: center;
+    
 }
 
 .itemtext {
